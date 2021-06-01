@@ -5,16 +5,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
-    <div>
+    <div class="wrapper">
+
+        <div class="header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="./assets/img/proba.jpg" alt="LOGO"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main" id="refresh">
+            <div class="proba">
+                <form class="row" action="" method="" onSubmit="return false">
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="departure">Miejsce wylotu(z):</label>
+                        <input type="text" list="listOfCities" name="departure" id="cityNameInput"
+                            placeholder="Miejsce wylotu" required>
+                        <datalist id="listOfCities">
+                            <option value="Kraków"></option>
+                        </datalist>
+                    </div>
+                    <br>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="arrival">Miejsce przylotu(do):</label>
+                        <input type="text" list="listOfCitiesArrival" name="arrival" id="cityNameInputArrival"
+                            placeholder="Miejsce przylotu" required>
+                        <datalist id="listOfCitiesArrival">
+                        </datalist>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="departureDate">Wybierz datę wylotu</label>
+                        <input type="date" name="departureDate" id="today" class="dateDeparture" min="" required>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="arrivalDate">Wybierz datę powrotu</label>
+                        <input type="date" name="arrivalDate" id="tommorow" class="dateArrival" min="" required>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="numbPas">Liczba pasażerów</label>
+                        <input type="number" name="numbPas" id="numbPas" min="1" step="1" required>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4">
+                        <button type="submit" id="nextPage" class="nextPage"> Przejdź dalej</button>
+                    </div>
+                </form>
+            </div>
+            <section class="weather">
+                <div class="top">
+                    <h1>POGODA</h1>
+                    <div class="main-info">
+                        <div>
+                            <h3 class="city-name">Kraków</h3>
+                            <p class="warning"></p>
+                        </div>
+                        <img class="photo" src="./assets/img/tlo.jpg" alt="Obrazek " />
+                    </div>
+                    <hr>
+                </div>
+                <div class="bottom">
+                    <div class="headings">
+                        <p>Ciśnienie:</p><hr>
+                        <p>Temperatura:</p><hr>
+                        <p>Wilgotność:</p><hr>
+                    </div>
+                
+                    <div class="weather-info">
+                        <p class="pressure">1000 hPa</p><hr>
+                        <p class="temp">21 C</p><hr>
+                        <p class="humidity">20 %</p><hr>
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-popup" id="myForm">
+                <form action="#" class="form-container" onSubmit="return false">
+                    <h1>Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="btn cancel" id="btn cancel">Close</button>
+                </form>
+            </div>
+        </div>
+        
 
     </div>
-    <div class="autoprefixer">hej</div>
-    <h1 id="demo">chyba działa</h1>
-    <h2>git</h2>
+    <div class="footer">
+        <p>Copyright</p>
+    </div>
     <!-- <script src="bundle.js"></script> -->
 </body>
 

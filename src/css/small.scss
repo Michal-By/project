@@ -8,54 +8,69 @@ $baseFontSizeSmall: 13px;
         height: 50px;
         padding: 0;
     }
-    .footer{
+
+    .footer {
         height: 20px;
     }
-    body{
+
+    body {
         grid-template-rows: 12vh 80vh 8vh;
         font-size: $baseFontSizeSmall;
-        .formPlace{
-            h1,h2{
+        .detail {
+            select {
+                font-size: 10px;
+            }
+        .formPlace {
+
+            h1,
+            h2 {
                 font-size: 16px;
             }
         }
-        form{
+
+        form {
             font-size: $baseFontSizeSmall;
-            .form-select{
+
+            .form-select {
                 font-size: $baseFontSizeSmall;
             }
-            input{
+
+            input {
                 font-size: $baseFontSizeSmall;
             }
-            
         }
-        .weather{
+        }
+        .weather {
             width: 224px;
             font-size: $baseFontSizeSmall;
-            .headings{
-                p{
+
+            .headings {
+                p {
                     font-size: $baseFontSizeSmall;
                 }
             }
-            .weather-info{
-                p{
+
+            .weather-info {
+                p {
                     font-size: $baseFontSizeSmall;
                 }
             }
         }
     }
-
 }
 
+
 @media screen and (max-width: 768px) {
-    .plane{
+    .plane {
         margin: 0 10%;
     }
-    .formPlace{
+
+    .formPlace {
         justify-content: center;
         margin: 0 25%;
     }
-    .flightDetail{
+
+    .flightDetail {
         margin-left: 30%;
     }
 }

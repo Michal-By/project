@@ -17,8 +17,7 @@ body {
     /* Photo by Max Andrey from Pexels */
     background: url("../assets/img/pexels-max-andrey-1254736.jpg");
     background-repeat: no-repeat;
-
-
+    background-position: top;
     .logout {
         display: none;
     }
@@ -362,3 +361,21 @@ body {
     }
 
 }
+@media screen and (min-width: 1921px) {
+    body{
+        display: grid;
+        place-items: center;
+        margin: auto;
+        width: 1920px;
+        height: 1080px;
+        .navbar{
+            width: 1920px;
+            display: flex;
+            margin: auto;
+        }
+        .wrapper{
+            width: 1920px;
+        }
+    }
+}
+

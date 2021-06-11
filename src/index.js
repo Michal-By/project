@@ -21,9 +21,9 @@ today.addEventListener("change", () => {
 // popup show/hide
 
 
-const form = document.querySelector("form");
-const input = form.querySelector("select");
-const select = form.querySelector("input");
+const formMain = document.querySelector("form");
+const input = formMain.querySelector("select");
+const select = formMain.querySelector("input");
 const myForm = document.getElementById("myForm");
 const formDetail = document.getElementById("detail")
 const weather = document.getElementById("weather");
@@ -37,6 +37,8 @@ const logo = document.getElementById("logo");
 const btnLogin = document.getElementById("btn login");
 const btnCancel = document.getElementById("btn cancel");
 const logout = document.getElementById("logout")
+const end = document.getElementById("end");
+const submitPage = document.getElementById("submitPage");
 
 
 btnCancel.addEventListener("click", function () {
@@ -49,9 +51,9 @@ logout.addEventListener("click", () => {
     weather.style.display = "block";
     weather1.style.display = "none"
     submitPage.style.display = "none"
-    form.reset();
-    myForm.reset();
+    formMain.reset();
     formDetail.reset();
+    myForm.reset();
     myForm.style.display = "none";
 })
 
@@ -99,7 +101,7 @@ const price = (city1, city2, day) => {
         .then((resp) => resp.json())
         .then((response) => {
             cena = response.Quotes[0].MinPrice
-            document.querySelector(".priceTo").textContent = `${cena}`+` PLN`
+            document.querySelector(".priceTo").textContent = `${cena}` + ` PLN`
 
 
         })
@@ -121,7 +123,7 @@ const price1 = (city1, city2, day) => {
         .then((resp) => resp.json())
         .then((response) => {
             cena1 = response.Quotes[0].MinPrice
-            document.querySelector(".priceFrom").textContent = `${cena1}`+` PLN`
+            document.querySelector(".priceFrom").textContent = `${cena1}` + ` PLN`
         })
         .catch((err) => {
             console.error(err);
@@ -168,7 +170,7 @@ document.getElementById("currentDay").innerHTML = `Dzisiejsza data:` + ` ` + `${
 const place = document.getElementById("place")
 
 
-form.addEventListener("change", (e) => {
+formMain.addEventListener("change", (e) => {
     nextPage.addEventListener("click", () => {
         if (input.value && select.value) {
             myForm.style.display = "block";
@@ -177,22 +179,25 @@ form.addEventListener("change", (e) => {
         }
     })
 })
-formDetail.addEventListener("change", (e) => {
+formDetail.addEventListener("submit", (e) => {
     end.addEventListener("click", () => {
-        if (formDetail.querySelectorAll("select").value > 0) {
-            submitPage.style.display = "block";
+        if (formDetail.querySelector("select").value ) {
+            secondPage.style.display = "none";
+            submitPage.style.display = "block"
+            weather1.style.display = "block"
+        }else{
+            alert("Wypełnij formularz")
         }
     })
 })
 
-btnLogin.addEventListener("click", validate)
 
+btnLogin.addEventListener("click", validate)
 
 function validate() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     if (username == "user" && password == "user123") {
-        alert("Login successfully");
         firstPage.style.display = "none";
         weather.style.display = "none";
         myForm.style.display = "none";
@@ -204,12 +209,6 @@ function validate() {
     }
 }
 
-
-
-
-
-
-
 document.getElementById("select").addEventListener("change", calc)
 
 function calc() {
@@ -219,7 +218,7 @@ function calc() {
         fetch(`https://api.nbp.pl/api/exchangerates/rates/c/${this.value}/?format=json`)
             .then((resp) => resp.json())
             .then(function (data) {
-                document.querySelector(".priceTo1").innerHTML = `to `+ parseFloat(`${inputValue/ data.rates[0].ask}`).toFixed(2)
+                document.querySelector(".priceTo1").innerHTML = `to ` + parseFloat(`${inputValue/ data.rates[0].ask}`).toFixed(2)
             })
     }
 }
@@ -231,21 +230,14 @@ function calc1() {
         fetch(`https://api.nbp.pl/api/exchangerates/rates/c/${this.value}/?format=json`)
             .then((resp) => resp.json())
             .then(function (data) {
-                document.querySelector(".priceFrom1").innerText =`to `+parseFloat(`${ inputValue/ data.rates[0].ask}`).toFixed(2)
+                document.querySelector(".priceFrom1").innerText = `to ` + parseFloat(`${ inputValue/ data.rates[0].ask}`).toFixed(2)
             })
     }
 }
 
 
 
-const end = document.getElementById("end");
-const submitPage = document.getElementById("submitPage");
-end.addEventListener("click", () => {
-    secondPage.style.display = "none";
-    submitPage.style.display = "block"
-    weather1.style.display = "block"
 
-})
 document.getElementById("sit1").addEventListener("change", () => {
     document.querySelector(".submitSit").textContent = ` ` + `${document.getElementById("sit1").value}`
 })

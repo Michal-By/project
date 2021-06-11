@@ -1,9 +1,38 @@
+$baseFont: 'Roboto',
+sans-serif;
+$baseFontSize: 16px;
 form {
     display: block;
 
     input {
         width: 100%;
         display: block;
+        font-size: $baseFontSize;
+        background-color: #f1f1f1;
+        color: black;
+        border: 2px soild black;
+        border-radius: 10px;
+        height: 32px;
+        .dateDeparture{
+            font-size: $baseFontSize;
+            height: 32px;
+            padding: 4px 0 ;
+        }
+    }
+    select{
+        width: 100%;
+        display: block;
+        font-size: $baseFontSize;
+        background-color: #f1f1f1;
+        color: black;
+        border: 2px soild black;
+        border-radius: 10px;
+        height: 32px;
+    }
+    .form-select {
+        width: 100%;
+        display: block;
+        font-size: $baseFontSize;
         background-color: #f1f1f1;
         color: black;
         border: 2px soild black;
@@ -11,12 +40,28 @@ form {
     }
 
     .nextPage {
+        height: 32px;
         width: 100%;
-        border: 2px solid black;
         border-radius: 10px;
-
-        margin-top: 20px;
+        margin-top: 24px;
     }
 }
 
-
+.formPlace{
+    select{
+        border-radius: 10px;
+    }
+    margin: 0 5%;
+    justify-content: center;
+    h1,h2{
+        font-size: 25px;
+    }
+    input{
+    margin-left: 5%;
+    }
+    button{
+        margin-top: 2%;
+        border: solid 2px white;
+        border-radius: 10px;
+    }
+}

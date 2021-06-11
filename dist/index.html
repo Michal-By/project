@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>RezerwacjaBiletów</title>
+<link href="index.5c5a8acb6324c2e842cf.css" rel="stylesheet"></head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="header">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand-sm" id="logo" href="#"><img src="logo.jpg" alt="LOGO"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="homePage" aria-current="page" href="#">Strona główna</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link logout" id="logout" href="#">Wyloguj</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="mainPage">
+            <div class="flightInfo" id="firstPage">
+                <div id="currentDay"></div>
+                <form class="row" action="" method="" onSubmit="return false">
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="departure">Miejsce wylotu(z):</label>
+                        <select id="cityNameSelect" class="form-select form-select-sm"
+                            aria-label=".form-select-sm example" required>
+                            <option disabled value="" hidden selected>Wybierz z listy:</option>
+                            <option value="Kraków">Kraków </option>
+                        </select>
+                    </div> <br>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="arrival">Miejsce przylotu(do):</label>
+                        <select class="form-select form-select-sm" id="arrival" name="departure"
+                            aria-label=".form-select-sm example" aria-placeholder="miejsce Wyotu" required>
+                            <option disabled value="" hidden selected>Wybierz z listy:</option>
+                            <option value="Warszawa">Warszawa </option>
+                            <option value="Londyn">Londyn</option>
+                            <option value="Nowy York">Nowy York</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="departureDate">Wybierz datę wylotu</label>
+                        <input type="date" name="departureDate" id="today" class="dateDeparture" min=""
+                            placeholder="data" required>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="arrivalDate">Wybierz datę powrotu</label>
+                        <input type="date" name="arrivalDate" id="tommorow" class="dateArrival" min="" required>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6 col-xl-4">
+                        <label for="numbPas">Liczba pasażerów</label>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numbPas"
+                            required>
+                            <option value="jeden">1</option>
+                            <input style="display: none">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4">
+                        <button type="submit" id="nextPage" class="nextPage"> Przejdź dalej</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="secondPage" id="secondPage">
+                <div class="row flightDetail">
+                    <div class="col-sm-12 col-md-4 col-xl-4 plane">
+                        <img id="planePhoto" src="xxxHTMLLINKxxx0.04205950884173060.6594797656753295xxx" alt="" class="plane">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4 formPlace">
+                        <form id="detail" action="" onSubmit="return false">
+                            <label for="laggage">
+                                <h1>Wybierz bagaż:</h1>
+                            </label>
+                            <select name="laggage" id="laggage" type="text" required>
+                                <option disabled value=""  selected>Wybierz z listy:</option>
+                                <option value="Podręczny (darmowy)">Podręczny (darmowy)</option>
+                                <option value="Do 15 kg (+ 50 PLN)">Do 15 kg (+ 50 PLN)</option>
+                                <option value="Do 25 kg (+ 100 PLN)">Do 25 kg (+ 100 PLN)</option>
+                            </select><br>
+                            <label for="">
+                                <h2>Wybierz miejsce:</h2>
+                            </label><br>
+                            <label for="rzad">Rzad</label>
+                            <select name="rzad" type="number" id="sit1" required>
+                                <option disabled value="1"  selected>Wybierz z listy:</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                
+                            </select>
+                            <label for="place">Miejsce</label>
+                            <select type="text" name="place" id="miejsca1" required>
+                                <option disabled value=""  selected>Wybierz z listy:</option>
+                                <option value="A">A </option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                            </select><br>
+                            <button type="submit" id="end">Podsumowanie</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submitPage" id="submitPage">
+                <div class="submitTicket">
+                    <h1>Podsumowanie rezerwacji:</h1>
+                </div>
+                <div class="submitFlight">
+                    <div>
+                        <p class="sumbitFlightTo"></p>
+                        <div class="price">
+                            <p class="priceTo"></p>
+                            <p class="priceTo1"></p>
+                            <select name="" id="select">
+                                <option value=""  selected disabled hidden></option>
+                                <option value="eur">EUR</option>
+                                <option value="chf">CHF</option>
+                                <option value="usd">USD</option>
+                            </select>
+                            
+                        </div>
+                        <p class="sumbitFlightFrom"></p>
+                        <div class="price">
+                            <p class="priceFrom"></p>
+                            <p class="priceFrom1"></p>
+                            <select name="" id="select1">
+                                <option value="1" selected disabled hidden></option>
+                                <option value="eur">EUR</option>
+                                <option value="chf">CHF</option>
+                                <option value="usd">USD</option>
+                            </select>
+                            
+
+                        </div>
+                        <div class="place">
+                            <p>Miejsce:&nbsp;</p>
+                            <p class="submitSit"></p>
+                            <p class="submitPlace"></p>
+                        </div>
+                        <div class="place">
+                            <p id="laggage">Bagaż:&nbsp;</p>
+                            <p class="luggage"></p>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div class="choose">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="weather" id="weather">
+            <div class="top">
+                <h1>POGODA</h1>
+                <div class="main-info">
+                    <div>
+                        <h3 class="city-name"></h3>
+                        <p class="warning"></p>
+                    </div>
+                    <img class="photo" src="xxxHTMLLINKxxx0.184833129298548780.6208197607172288xxx" alt="Obrazek pogody" />
+                </div>
+                <hr>
+            </div>
+            <div class="bottom">
+                <div class="headings">
+                    <p>Ciśnienie:</p>
+                    <hr>
+                    <p>Temperatura:</p>
+                    <hr>
+                    <p>Wilgotność:</p>
+                    <hr>
+                </div>
+
+                <div class="weather-info">
+                    <p class="pressure"></p>
+                    <hr>
+                    <p class="temp"></p>
+                    <hr>
+                    <p class="humidity"></p>
+                    <hr>
+                </div>
+            </div>
+        </section>
+        <section class="weather1" id="weather1">
+            <div class="top">
+                <h1>POGODA</h1>
+                <div class="main-info">
+                    <div>
+                        <h3 class="city-name2"></h3>
+                        <p class="warning"></p>
+                    </div>
+                    <img class="photo1" src="xxxHTMLLINKxxx0.65756889453573590.17874012337994838xxx" alt="Obrazek pogody" />
+                </div>
+                <hr>
+            </div>
+            <div class="bottom">
+                <div class="headings">
+                    <p>Ciśnienie:</p>
+                    <hr>
+                    <p>Temperatura:</p>
+                    <hr>
+                    <p>Wilgotność:</p>
+                    <hr>
+                </div>
+
+                <div class="weather-info">
+                    <p class="pressure1"></p>
+                    <hr>
+                    <p class="temp1"></p>
+                    <hr>
+                    <p class="humidity1"></p>
+                    <hr>
+                </div>
+            </div>
+        </section>
+        <div class="form-popup" id="myForm">
+            <form action="#" class="form-container" onSubmit="">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Email" name="email" id="username" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Hasło" name="psw" id="password" required>
+
+                <button type="button" class="btn" id="btn login">Zaloguj</button>
+                <button type="button" class="btn cancel" id="btn cancel">Zamknij</button>
+            </form>
+        </div>
+        <footer class="page-footer font-small blue">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                <p>© 2021 Copyright: Michał Bujas</p>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+
+
+    </div>
+    </script>
+    <!-- <script src="bundle.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+<script type="text/javascript" src="index.694aec1b1ed0ab4d7f4a.bundle.js"></script></body>
+
+</html>

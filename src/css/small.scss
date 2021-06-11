@@ -1,0 +1,61 @@
+$baseFont: 'Roboto',
+sans-serif;
+$baseFontSizeSmall: 13px;
+
+@media screen and (max-width: 360px) {
+    .navbar-brand-sm {
+        width: 200px;
+        height: 50px;
+        padding: 0;
+    }
+    .footer{
+        height: 20px;
+    }
+    body{
+        grid-template-rows: 12vh 80vh 8vh;
+        font-size: $baseFontSizeSmall;
+        .formPlace{
+            h1,h2{
+                font-size: 16px;
+            }
+        }
+        form{
+            font-size: $baseFontSizeSmall;
+            .form-select{
+                font-size: $baseFontSizeSmall;
+            }
+            input{
+                font-size: $baseFontSizeSmall;
+            }
+            
+        }
+        .weather{
+            width: 224px;
+            font-size: $baseFontSizeSmall;
+            .headings{
+                p{
+                    font-size: $baseFontSizeSmall;
+                }
+            }
+            .weather-info{
+                p{
+                    font-size: $baseFontSizeSmall;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .plane{
+        margin: 0 10%;
+    }
+    .formPlace{
+        justify-content: center;
+        margin: 0 25%;
+    }
+    .flightDetail{
+        margin-left: 30%;
+    }
+}
